@@ -361,14 +361,14 @@ footer .social a {
     .contact-form { padding: 56px 5%; }
     .map iframe { height: 480px; }
     .contact-info li{
-        width: 100%;
+        width: 100vw;
     }
 }
 @media (max-width: 420px) {
     .map iframe { height: 260px; }
     /* .contact-info li { font-size: .95rem; padding: 10px; } */
     .contact-info li{
-        width: 100%;
+        width: 100vw;
     }
 }
 
