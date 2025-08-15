@@ -1,0 +1,372 @@
+:root {
+    --brand-color:blue;
+    --dark-color: #222;
+    --light-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    line-height: 1.5;
+    background: #f5f5f5;
+    color: var(--dark-color);
+}
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background: var(--brand-color);
+    color: var(--light-color);
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+header img { 
+    width: 150px; 
+}
+
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 50px; }
+nav ul li a {
+    color: var(--light-color);
+    text-decoration: none;
+}
+
+nav ul li a.active { font-weight: bolder; }
+.menu-toggle { display: none; cursor: pointer; }
+
+nav ul li:hover{
+    background-color: orange;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+/* HERO */
+.hero {
+    background: url('./a.jpg') center/cover no-repeat;
+    color: var(--light-color);
+    height: 74vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.hero .btn {
+    background: var(--brand-color);
+    padding: 20px 30px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.hero .btn:hover{
+    background-color: orange;
+}
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+/* ABOUT */
+.about {
+    display: flex;
+    padding: 40px 5%;
+    gap: 30px;
+    background-color: orange;
+}
+
+.about-img img{
+    width: 300px;
+    height: 300px;
+
+}
+/* .about-text{
+ flex: 1;
+} */
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+/* GALLERY */
+.gallery {
+    padding: 40px 5%;
+}
+.machine-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 20px;
+}
+.machine img { width: 100%; border-radius: 8px; }
+
+/* SERVICES */
+.services {
+    /* background: #eee; */
+    background-color: orange;
+    padding: 40px 5%;
+}
+.service-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.service-card {
+    background: white;
+    padding: 20px;
+    flex: 1;
+    text-align: center;
+    border-radius: 8px;
+}
+.service-card i {
+    font-size: 2em;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+/* FOOTER */
+footer {
+    background: var(--brand-color);
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+footer .social a {
+    color: white;
+    margin: 0 5px;
+    font-size: 1.2em;
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    header{
+         padding: 5px 5%;
+         padding-left: 5px;
+    }
+    header img { width: 90px; }
+    nav ul { 
+        display: none;
+        flex-direction: column;
+        background: var(--brand-color);
+        position: absolute;
+        top: 60px;
+        right: 5%;
+        width: 200px;
+    }
+    nav ul.show { display: flex; width: 100%;height: 20%; background-color: lightblue;}
+    .menu-toggle { display: block;}
+    .about { flex-direction: column; justify-content: center; align-items: center; }
+
+    .about-img img{
+        width: 300px;
+        height: 300px;
+    }
+}
+
+
+/* CONTACT ABOUT PAGE STYLING BEGINS HERE  */
+
+/* Container alignment for About section */
+.about-business {
+    padding: 48px 5%;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    /* background-color: orange; */
+}
+.about-business h2 { font-size: 2rem; margin-bottom: 12px; }
+.about-business p { max-width: 900px; margin: 0 auto 18px; color: rgba(0,0,0,1.75); line-height:2.5; }
+.about-business img {
+    margin-top: 20px;
+    width: 70%;
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,1);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Contact Info layout - Fully centered */
+.contact-info {
+    padding: 40px 5%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;     /* Stack heading, list, social vertically */
+    align-items: center;        /* Center horizontally */
+    text-align: center;         /* Center all text inside */
+    gap: 20px;
+    background-color: orange;
+}
+
+.contact-info h2 {
+    margin-bottom: 8px;
+    font-size: 2rem;
+}
+
+/* List style - Center each item and unify width */
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;                /* Take full width of parent */
+    align-items: center;        /* Center list items */
+}
+
+.contact-info li {
+    display: flex;
+    align-items: center;
+    justify-content: justify;    /* Center icon + text inside li */
+    gap: 12px;
+    /* padding: 12px 14px; */
+    /* border-radius: 10px; */
+    /* box-shadow: 0 6px 20px rgba(0,0,0,1); */
+    color: var(--dark-color);
+    /* color: white; */
+    font-size: 1rem;
+    /* background: white;          Better contrast */
+    width: 40%;                 /* Full width of ul */
+    max-width: 500px;           /*Prevent being too wide */
+}
+
+.contact-info li i {
+    /* text-decoration: none; */
+    font-size: 1.25rem;
+    color: var(--dark-color);
+    min-width: 30px;
+    text-align: center;
+}
+
+/* Social icons centered in row */
+.contact-info .social {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.contact-info .social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(0,0,0,1);
+    color: var(--dark-color);
+    transition: transform .12s ease, background .12s ease;
+}
+
+.contact-info .social a:hover {
+    transform: translateY(-10px);
+}
+
+
+/* Contact form styling */
+.contact-form {
+    padding: 44px 5%;
+    max-width: 720px;
+    margin: 0 auto;
+}
+.contact-form h2 { margin-bottom: 12px; font-size: 2rem; text-align: center; }
+.contact-form form {
+    display: grid;
+    gap: 12px;
+    background: #fff;
+    padding: 18px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.04);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.12);
+    font-size: 1rem;
+    background: #fff;
+    transition: box-shadow .16s ease, border-color .16s ease;
+}
+.contact-form textarea { min-height: 160px; resize: vertical; line-height: 1.5; }
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--brand-color);
+    box-shadow: 0 8px 24px rgba(255,102,0,0.12);
+}
+.contact-form .btn {
+    display: inline-block;
+    width: 160px;
+    text-align: center;
+    margin: 6px 0 0 auto;
+}
+.contact-form .btn:hover{
+    background-color: orange;
+}
+
+/* Map / embed */
+.map {
+    padding: 40px 5%;
+    max-width: 1100px;
+    margin: 0 auto 60px;
+}
+.map iframe {
+    width: 100%;
+    height: 420px;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+/* Small tweaks for page-wide .btn (covers hero + form) */
+.btn {
+    display: inline-block;
+    background: var(--brand-color);
+    color: var(--light-color);
+    padding: 12px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+.btn:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(0,0,0,0.12); }
+
+/* Responsive behavior */
+@media (min-width: 769px) {
+    .contact-info { grid-template-columns: 1fr 1fr; }
+    .contact-info ul { align-self: start; }
+    .contact-form { padding: 56px 5%; }
+    .map iframe { height: 480px; }
+}
+@media (max-width: 420px) {
+    .map iframe { height: 260px; }
+    .contact-info li { font-size: .95rem; padding: 10px; }
+}
